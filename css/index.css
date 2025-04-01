@@ -105,6 +105,7 @@ footer {
     box-shadow: none;
     padding: 10px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .skills-marquee {
@@ -127,12 +128,14 @@ footer {
     color: #c5c6c7;
     white-space: nowrap;
     border: 1px solid #45A29E;
+    transition: all 0.3s ease;
 }
 
 .skill-item:hover {
-    scale: 1.2;
+    transform: scale(1.2);
     background-color: #66FCF1;
     color: #0b0c10;
+    z-index: 10;
 }
 
 @keyframes marquee {
@@ -140,7 +143,7 @@ footer {
     100% { transform: translateX(-50%); }
 }
 
-.skills-marquee-container:hover .skills-marquee {
+.skills-container:hover .skills-marquee {
     animation-play-state: paused;
 }
 
@@ -311,7 +314,7 @@ p {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    margin-left: 80px;
+    margin-left: 50px;
 }
   
 .interests-list li {
@@ -328,6 +331,11 @@ p {
     border-left: 3px solid transparent;
     cursor: pointer;
     color: #c5c6c7;
+    /* Fixed width and height for uniform size */
+    width: 130px;
+    height: 50px;
+    /* Make sure content is properly aligned */
+    justify-content: flex-start;
 }
   
 .interests-list li:hover {
@@ -360,6 +368,9 @@ p {
     font-size: 20px;
     transition: transform 0.3s ease;
     color: #45A29E;
+    /* Fixed width for icon to ensure alignment */
+    width: 24px;
+    text-align: center;
 }
   
 .interests-list li:hover .interest-icon {
@@ -376,32 +387,28 @@ p {
     
     nav li {
         margin: 10px 0;
-        /* Keep the width consistent on mobile */
         width: 100%;
         max-width: 200px;
     }
     
-    /* Fixed marquee responsive behavior */
+
     .skills-container {
-        overflow: visible;
+        overflow: hidden;
     }
     
     .skills-marquee {
-        animation: none;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
+        animation: marquee 20s linear infinite; 
+        width: max-content;
     }
     
     .skills-list {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-right: 0;
+        padding-right: 20px;
     }
     
     .skill-item {
         margin-bottom: 10px;
+        font-size: 14px;
+        padding: 8px 12px; 
     }
     
     /* Responsive line */
@@ -411,6 +418,11 @@ p {
     
     .interests-list {
         margin-left: 60px;
+    }
+    .interests-list li {
+        width: 140px;
+        height: 48px;
+        font-size: 16px;
     }
 }
 
@@ -428,6 +440,16 @@ p {
         font-size: 16px;
     }
     
+    /* Slower marquee animation for very small screens */
+    .skills-marquee {
+        animation: marquee 25s linear infinite;
+    }
+    
+    .skill-item {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    
     /* Even smaller line for very small screens */
     .line {
         width: 100px;
@@ -442,9 +464,10 @@ p {
     }
     
     .interests-list li {
-        font-size: 16px;
-        padding: 10px 15px;
-        margin-left: 10px;
+        width: 130px;
+        height: 45px;
+        font-size: 15px;
+        padding: 10px;
     }
     
     .interest-box {
