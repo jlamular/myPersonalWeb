@@ -19,7 +19,6 @@ body {
     background-color: #0b0c10;
 }
 
-/* Updated Navigation with uniform sizes */
 nav {
     background-color: #0b0c10;
     padding: 1rem;
@@ -387,8 +386,8 @@ p {
     
     nav li {
         margin: 10px 0;
-        width: 100%;
-        max-width: 200px;
+        width: 90%;
+        
     }
     
 
@@ -440,7 +439,7 @@ p {
         font-size: 16px;
     }
     
-    /* Slower marquee animation for very small screens */
+  
     .skills-marquee {
         animation: marquee 25s linear infinite;
     }
@@ -450,7 +449,7 @@ p {
         padding: 6px 10px;
     }
     
-    /* Even smaller line for very small screens */
+   
     .line {
         width: 100px;
     }
@@ -464,7 +463,7 @@ p {
     }
     
     .interests-list li {
-        width: 130px;
+        width: 120px;
         height: 45px;
         font-size: 15px;
         padding: 10px;

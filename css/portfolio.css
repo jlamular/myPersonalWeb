@@ -17,9 +17,8 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    
-}
 
+}
 nav {
     background-color: #0b0c10;
     padding: 1rem;
@@ -34,13 +33,11 @@ nav ul {
 
 nav li {
     margin: 0 15px;
+    /* Adding fixed width for uniform size */
+    width: 120px;
+    text-align: center;
 }
 
-h1{
-    margin-bottom: 1rem;
-    color: white;
-    text-shadow: 2px 2px 4px #66FCF1;
-}
 nav a {
     color: #317873;
     text-decoration: none;
@@ -50,6 +47,14 @@ nav a {
     transition: background-color 0.3s;
     box-shadow: 0 4px 12px rgba(102, 252, 241, 0.4);
     border-radius: 6px;
+    /* Ensure text is centered */
+    text-align: center;
+    /* Set a consistent height */
+    height: 100%;
+    /* Better vertical alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav a:hover {
@@ -161,10 +166,12 @@ footer {
     nav ul {
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
     
     nav li {
         margin: 10px 0;
+        width: 90%;
     }
     
     .audio-section p {
